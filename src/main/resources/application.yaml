@@ -1,13 +1,26 @@
-spring.main.banner-mode: off
+spring.main.banner-mode: 'off'
 spring.output.ansi.enabled: ALWAYS
 
 logging:
-  pattern.console: "%clr(%-5p) %clr(-){faint} %clr([%5.15t]){cyan} %clr(%-10.500logger{500}){blue} %clr(:){red} %clr(%m){faint}%n"
+  pattern.console: "%clr(%-5p) %clr(-){faint} %clr([%5.15t]){cyan} %clr(%-10.20logger{1}){blue} %clr(:){red} %clr(%m){faint}%n"
   level:
     root: info
     com.prez: debug
-    com.prez.axon.Bank: warn
+    com.prez.axon.Bank: debug
+    org.axonframework.common.IdentifierFactory: warn
+    org.axonframework.messaging.Scope: info
     org.axonframework: debug
-    org.axonframework.messaging.unitofwork: info
     org.springframework.context.support.PostProcessorRegistrationDelegate: warn
+    org.springframework.context.annotation.ConfigurationClassPostProcessor: warn
+    org.axonframework.messaging.unitofwork: info
     org.axonframework.serialization.ChainingConverter: warn
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/demo_axon
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
