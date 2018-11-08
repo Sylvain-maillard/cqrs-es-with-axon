@@ -1,0 +1,13 @@
+spring.main.banner-mode: off
+spring.output.ansi.enabled: ALWAYS
+
+logging:
+  pattern.console: "%clr(%-5p) %clr(-){faint} %clr([%5.15t]){cyan} %clr(%-10.500logger{500}){blue} %clr(:){red} %clr(%m){faint}%n"
+  level:
+    root: info
+    com.prez: debug
+    com.prez.axon.Bank: warn
+    org.axonframework: debug
+    org.axonframework.messaging.unitofwork: info
+    org.springframework.context.support.PostProcessorRegistrationDelegate: warn
+    org.axonframework.serialization.ChainingConverter: warn
