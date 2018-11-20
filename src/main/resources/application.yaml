@@ -7,7 +7,7 @@ logging:
     root: info
     com.prez: debug
     com.prez.axon.Bank: warn
-    org.axonframework: debug
+    org.axonframework: info
     org.axonframework.messaging.unitofwork: info
     org.springframework.context.support.PostProcessorRegistrationDelegate: warn
     org.axonframework.serialization.ChainingConverter: warn
