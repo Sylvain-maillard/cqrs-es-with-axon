@@ -1,0 +1,44 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST http://localhost:8080/comptes
+Content-Type: application/x-www-form-urlencoded
+
+numero=123&soldeInitial=10000
+
+###
+
+POST http://localhost:8080/comptes
+Content-Type: application/x-www-form-urlencoded
+
+numero=456&soldeInitial=0
+
+###
+
+GET http://localhost:8080/comptes
+Accept: application/json
+
+###
+
+POST http://localhost:8080/virements
+Content-Type: application/x-www-form-urlencoded
+
+id=789&source=123&cible=456&montant=1000
+
+###
+
+GET http://localhost:8080/virements/789
+Accept: application/json
+
+###
+
+# ferme le compte 456
+
+PUT http://localhost:8080/comptes/456/fermer
+
+###
+
