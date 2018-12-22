@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CQRS / Event Sourcing / DDD avec le framework Axon</title>
+
+		<meta name="description" content="Petite présentation du framework Axon">
+		<meta name="author" content="Sylvain Maillard">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section data-markdown="presentation.md"
+                         data-separator="---"
+                         data-separator-vertical="^\n\n"
+                         data-separator-notes="^Note:"
+                         data-charset="utf-8">
+                    <!--
+                        Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
+                        For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
+                    -->
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+                    { src: 'plugin/elapsed-time-bar.js'},
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				],
+
+                allottedTime: 10 * 60 * 1000, // 10 minutes de blabla, puis 15 minutes de démo, 5 min de questions...
+
+                markdown: {
+                    smartypants: true
+                }
+			});
+
+            window.addEventListener("mousedown", handleClick, false);
+            window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+
+            function handleClick(e) {
+                e.preventDefault();
+                if(e.button === 0) Reveal.next();
+                if(e.button === 2) Reveal.prev();
+            }
+
+		</script>
+
+	</body>
+</html>
